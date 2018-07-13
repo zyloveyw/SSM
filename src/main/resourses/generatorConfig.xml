@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+    <classPathEntry location="C:\Program Files\MySQL\mysql-connector-java-8.0.11\mysql-connector-java-8.0.11.jar"/>
+
+    <context id="sqlgenerator" targetRuntime="MyBatis">
+        <!-- 是否生成注释 -->
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <!-- 数据库连接 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/test?useUnicode=true&amp;characterEncoding=UTF-8"
+                        userId="root" password="" />
+
+        <!-- 生成的包名和工程名 -->
+        <javaModelGenerator targetPackage="SSM_TEST123"
+                            targetProject="src/main/java/Entity/Model"/>
+        <sqlMapGenerator targetPackage="SSM_TEST123"
+                         targetProject="src/main/resources/mapper" />
+        <javaClientGenerator targetPackage="SSM_TEST123"
+                             targetProject="src/main/java/Dao" type="XMLMAPPER" />
+
+        <!-- 数据库表 -->
+        <table  tableName="User" >
+            <!-- 设置别名 -->
+           <!-- <columnOverride column="UserId" property="UserId" />
+            <columnOverride column="UserName" property="UserName" />
+            <columnOverride column="Age" property="Age" />-->
+        </table>
+        <table  tableName="UserAccount" >
+            <!-- 设置别名 -->
+            <!--<columnOverride column="UserId" property="UserId" />
+            <columnOverride column="LoginCd" property="LoginCd" />
+            <columnOverride column="Password" property="Password" />-->
+        </table>
+    </context>
+</generatorConfiguration>
